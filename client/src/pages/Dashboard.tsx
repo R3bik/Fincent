@@ -1,7 +1,6 @@
-import { SignOutButton } from "@clerk/clerk-react";
 import React from "react";
-import NavBar from "../components/NavBar";
 import Sidebar from "../components/Dashboard/Sidebar";
+import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -11,10 +10,12 @@ const Dashboard = () => {
         <Sidebar />
       </div>
       {/* dashboard content */}
-      <div className="ml-[300px] w-full h-screen overflow-y-auto p-10">
+      <div className="ml-[300px] w-full h-screen overflow-y-auto p-12">
         {/* Add your NavBar or other components here */}
 
-        <div>dashboard content</div>
+        <div>
+          <Outlet />
+        </div>
       </div>
     </div>
   );

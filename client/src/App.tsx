@@ -3,6 +3,12 @@ import { useUser } from "@clerk/clerk-react";
 import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
 import NavBar from "./components/NavBar";
+import ProtectedRoute from "./routes/ProtectedRoutes";
+import MainDashboard from "./components/Dashboard/MainDashboard";
+import Income from "./components/Dashboard/Income";
+import Expenses from "./components/Dashboard/Expenses";
+import Prediction from "./components/Dashboard/Prediction";
+import Profile from "./components/Dashboard/Profile";
 
 function App() {
   const { isSignedIn, user } = useUser();
@@ -23,12 +29,16 @@ function App() {
             }
           />
 
-          {/* Dashboard - protected */}
-
-          <Route
-            path="/dashboard"
-            element={isSignedIn ? <Dashboard /> : <Navigate to="/" />}
-          />
+          {/* Protected dashboard layout */}
+          <Route path="/dashboard" element={<ProtectedRoute />}>
+            <Route element={<Dashboard />}>
+              <Route index element={<MainDashboard />} />
+              <Route path="income" element={<Income />} />
+              <Route path="expenses" element={<Expenses />} />
+              <Route path="prediction" element={<Prediction />} />
+              <Route path="profile" element={<Profile />} />
+            </Route>
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>
