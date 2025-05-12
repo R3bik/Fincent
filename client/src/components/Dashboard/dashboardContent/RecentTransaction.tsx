@@ -1,5 +1,6 @@
 import React from "react";
 import Transaction from "../../../utility/Transaction";
+import { MdFastfood } from "react-icons/md";
 
 const RecentTransaction = () => {
   return (
@@ -11,7 +12,34 @@ const RecentTransaction = () => {
         </div>
         {/* transaction info */}
         <div className="p-4 ">
-          <Transaction />
+          <Transaction
+            icon={<MdFastfood />}
+            title={"Food"}
+            date={"2023-10-01"}
+            amount={"$20"}
+            type={"+"}
+          />
+          <Transaction
+            icon={<MdFastfood />}
+            title={"Food"}
+            date={"2023-10-01"}
+            amount={"$20"}
+            type={"+"}
+          />
+          <Transaction
+            icon={<MdFastfood />}
+            title={"Food"}
+            date={"2023-10-01"}
+            amount={"$20"}
+            type={"+"}
+          />
+          <Transaction
+            icon={<MdFastfood />}
+            title={"Food"}
+            date={"2023-10-01"}
+            amount={"$20"}
+            type={"+"}
+          />
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ import FinanceOverview from "./dashboardContent/FinanceOverview";
 const MainDashboard = () => {
   return (
     <div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-6">
         <div className="grid grid-cols-3 gap-4">
           <InfoCard
             icon={<FaWallet className="text-white " />}
@@ -30,7 +30,10 @@ const MainDashboard = () => {
           />
         </div>
         {/* transaction details */}
-        <div className="flex items-center gap-6 ">
+        <div
+          className="
+          flex flex-col md:flex-row items-center gap-4"
+        >
           <RecentTransaction />
           <FinanceOverview />
         </div>
